@@ -1248,6 +1248,10 @@ footer a { color: var(--accent-light); text-decoration: none; }
   <div style="background:var(--amber-light);border:1px solid var(--border);border-left:3px solid var(--accent);padding:1.25rem 1.5rem;border-radius:0 4px 4px 0;font-size:13px;color:var(--amber);line-height:1.8;max-width:700px;">
     <strong>On the Anderson sewer extension:</strong> The engineering is done, stamped, and Town-approved — that's the expensive and time-consuming part. The physical installation is a buyer/builder cost. The engineer's opinion of probable cost (JVA, Oct 2021) was $135,100. A contractor bid from Randy Kneebone Excavating (June 2021) came in at ~$130,000. Both sets of plans transfer with the property. If buying both Anderson lots together, the extension serves both from a single pull.
   </div>
+
+  <div style="background:#eef2f7;border:1px solid var(--border);border-left:3px solid var(--blue);padding:1.25rem 1.5rem;border-radius:0 4px 4px 0;font-size:13px;color:var(--blue);line-height:1.8;max-width:700px;margin-top:1rem;">
+    <strong>Town of Erie tap fees (2025 rates):</strong> When connecting a new service to the Town mains, the Town charges a one-time connection fee. For a standard <strong>3/4" water service</strong>, the 2025 fee is <strong>$17,290</strong>. Sewer connection fees vary by meter size — see the current schedule at <a href="https://www.erieco.gov/587/Rates-Charges" target="_blank" style="color:var(--blue);text-decoration:underline;">erieco.gov → Rates &amp; Charges</a>. At 275 Holbrook and 270 Holbrook, water and sewer taps are already paid and in place — this cost is behind you on those two properties.
+  </div>
 </div>
 
 <!-- ═══════════════════ FAQ PAGE ═══════════════════ -->
@@ -1281,18 +1285,20 @@ footer a { color: var(--accent-light); text-decoration: none; }
     </div>
 
     <div class="form-card">
-      <div id="contact-form-wrap">
+      <form id="contact-form-wrap" name="contact" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-2col">
-          <div class="form-row"><label>First name</label><input type="text" id="fname" placeholder="Jane" /></div>
-          <div class="form-row"><label>Last name</label><input type="text" id="lname" placeholder="Smith" /></div>
+          <div class="form-row"><label>First name</label><input type="text" id="fname" name="fname" placeholder="Jane" /></div>
+          <div class="form-row"><label>Last name</label><input type="text" id="lname" name="lname" placeholder="Smith" /></div>
         </div>
         <div class="form-2col">
-          <div class="form-row"><label>Email</label><input type="email" id="email" placeholder="jane@example.com" /></div>
-          <div class="form-row"><label>Phone</label><input type="tel" id="phone" placeholder="(303) 555-0100" /></div>
+          <div class="form-row"><label>Email</label><input type="email" id="email" name="email" placeholder="jane@example.com" /></div>
+          <div class="form-row"><label>Phone</label><input type="tel" id="phone" name="phone" placeholder="(303) 555-0100" /></div>
         </div>
         <div class="form-row">
           <label>I am a</label>
-          <select id="buyer-type">
+          <select id="buyer-type" name="buyer-type">
             <option value="">Select...</option>
             <option>Individual buyer / owner-occupant</option>
             <option>Builder or developer</option>
@@ -1303,7 +1309,7 @@ footer a { color: var(--accent-light); text-decoration: none; }
         </div>
         <div class="form-row">
           <label>Property of interest</label>
-          <select id="property">
+          <select id="property" name="property">
             <option value="">Select...</option>
             <option>275 Holbrook — Rehab House ($399,000)</option>
             <option>270 Holbrook — Vacant Lot ($289,000)</option>
@@ -1318,7 +1324,7 @@ footer a { color: var(--accent-light); text-decoration: none; }
         </div>
         <div class="form-row">
           <label>Purpose of inquiry</label>
-          <select id="purpose">
+          <select id="purpose" name="purpose">
             <option value="">Select...</option>
             <option>General questions</option>
             <option>Request documents or plans</option>
@@ -1329,14 +1335,14 @@ footer a { color: var(--accent-light); text-decoration: none; }
         </div>
         <div class="form-row">
           <label>Message</label>
-          <textarea id="message" placeholder="Tell me what you're looking for, any questions you have, or outline your offer. The more detail the better — I know these properties inside and out and can answer anything."></textarea>
+          <textarea id="message" name="message" placeholder="Tell me what you're looking for, any questions you have, or outline your offer. The more detail the better — I know these properties inside and out and can answer anything."></textarea>
         </div>
-        <button class="submit-btn" onclick="submitForm()">Send Inquiry →</button>
-      </div>
-      <div class="form-success" id="form-success">
+        <button type="submit" class="submit-btn">Send Inquiry →</button>
+      </form>
+      <div class="form-success" id="form-success" style="display:none">
         <div style="font-size:2rem;margin-bottom:1rem;">✓</div>
         <h3>Message sent</h3>
-        <p>I'll be in touch within 24 hours. If your inquiry is time-sensitive, feel free to follow up by phone.</p>
+        <p>I'll be in touch within 24 hours. If it's time-sensitive, you can reach me at <strong>303-564-5016</strong>. That said, the form is always the best way to reach me — and before calling, it's worth a quick look at the FAQ tab, since most common questions are answered there.</p>
       </div>
     </div>
   </div>
@@ -1647,13 +1653,25 @@ function showPage(name, el) {
 }
 
 // ── FORM ──
-function submitForm() {
-  const fname = document.getElementById('fname').value.trim();
-  const email = document.getElementById('email').value.trim();
+document.getElementById('contact-form-wrap').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var fname = document.getElementById('fname').value.trim();
+  var email = document.getElementById('email').value.trim();
   if (!fname || !email) { alert('Please provide your name and email.'); return; }
-  document.getElementById('contact-form-wrap').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-}
+  var form = this;
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  })
+  .then(function() {
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  })
+  .catch(function() {
+    alert('There was a problem sending your message. Please try again or call 303-564-5016.');
+  });
+});
 
 renderProps();
 renderFAQ();

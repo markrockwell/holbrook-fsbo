@@ -699,6 +699,18 @@ main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 5rem; }
 }
 .doc-tag.available { background: var(--green-light); color: var(--green); border: 1px solid rgba(45,90,39,0.15); }
 .doc-tag.request { background: var(--amber-light); color: var(--amber); border: 1px solid rgba(122,79,15,0.15); }
+.doc-tag.download { background: var(--blue-light); color: var(--blue); border: 1px solid rgba(26,58,92,0.15); text-decoration: none; cursor: pointer; }
+.doc-tag.download:hover { background: #d0dff0; }
+
+/* ── ELEVATION IMAGES ── */
+.elev-gallery { display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap; }
+.elev-gallery img { flex: 1 1 280px; max-width: 100%; border: 1px solid var(--border); border-radius: 4px; background: white; }
+.elev-label { font-size: 11px; color: var(--muted); text-align: center; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── LOCATION MAP ── */
+.map-section { margin: 3rem 0 2rem; }
+.map-embed { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+.map-embed iframe { display: block; width: 100%; height: 380px; border: 0; }
 
 /* ── UTILITIES TABLE ── */
 .util-grid {
@@ -959,7 +971,7 @@ footer a { color: var(--accent-light); text-decoration: none; }
       <li>JVA-stamped, Town-approved sewer extension engineering for the Anderson lots</li>
       <li>Full StudioTJOA architectural permit set for 275 Holbrook main house + ADU</li>
       <li>Lopez Smolens structural engineering (main house remodel and ADU)</li>
-      <li>Completed asbestos abatement, lead-paint survey, and garage demolition (275)</li>
+      <li>Asbestos survey and air clearance on file, lead-paint survey, and garage demolition (275)</li>
       <li>Soils reports, drainage reports, improvement surveys, and boundary surveys</li>
       <li>Paid water/sewer/gas taps on 270 and 275 — a five-figure savings per tap</li>
       <li>Title policies, owner's policies, and closing document files on all parcels</li>
@@ -1016,6 +1028,42 @@ footer a { color: var(--accent-light); text-decoration: none; }
     </div>
   </div>
 
+  <!-- Location map -->
+  <div class="map-section">
+    <div class="section-head" style="margin-bottom:1.5rem;">
+      <div class="section-eyebrow">Location</div>
+      <h2>Old Town Erie — Holbrook &amp; Anderson</h2>
+      <p>All five properties sit within a single block in the heart of Old Town Erie — three blocks from Briggs Street, walkable to Coal Creek Park, and 30 minutes from both Denver and Boulder.</p>
+    </div>
+    <div class="map-embed">
+      <iframe src="https://maps.google.com/maps?q=275+Holbrook+St,+Erie,+CO+80516&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <!-- 275 Holbrook architectural drawings -->
+  <div style="margin-top:3rem;">
+    <div class="section-head" style="margin-bottom:1.5rem;">
+      <div class="section-eyebrow">275 Holbrook — Architectural Plans</div>
+      <h2>What it could look like</h2>
+      <p>StudioTJOA designed a full permit-set addition/remodel for the existing structure. These elevations are from the stamped architectural permit set (Rev 1, March 2023) — the same drawings on file with the Town of Erie.</p>
+    </div>
+    <div class="elev-gallery">
+      <div>
+        <img src="/img/275-elevation-east.png" alt="275 Holbrook — East Elevation (Holbrook Street face)" loading="lazy">
+        <div class="elev-label">East elevation — Holbrook Street face</div>
+      </div>
+      <div>
+        <img src="/img/275-elevation-north.png" alt="275 Holbrook — North Elevation" loading="lazy">
+        <div class="elev-label">North elevation</div>
+      </div>
+      <div>
+        <img src="/img/275-elevation-south.png" alt="275 Holbrook — South Elevation" loading="lazy">
+        <div class="elev-label">South elevation</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:0.75rem;">Architectural drawings © StudioTJOA Inc. Reproduced with permission as part of the property listing. Full permit set available for download in the Documents tab.</p>
+  </div>
+
 </div>
 
 <!-- ═══════════════════ DOCUMENTS PAGE ═══════════════════ -->
@@ -1023,48 +1071,38 @@ footer a { color: var(--accent-light); text-decoration: none; }
   <div class="section-head">
     <div class="section-eyebrow">Due diligence materials</div>
     <h2>Everything collected over years of ownership</h2>
-    <p>These are real documents — not promises. Most are available to verified serious buyers upon request via the contact form.</p>
+    <p>Engineering plans, architectural drawings, surveys, and environmental reports are available for direct download below. Permit-set documents and sensitive records are available to serious buyers — use the contact form.</p>
   </div>
 
   <div style="margin-bottom: 2.5rem;">
     <div class="section-eyebrow" style="margin-bottom:1rem;">275 Holbrook — Rehab House</div>
     <div class="docs-grid">
-      <div class="doc-row"><div class="doc-icon plan">📐</div><div><div class="doc-name">TJOA Architectural Permit Set (Rev 1, March 2023)</div><div class="doc-sub">Full permit-set drawings by StudioTJOA Inc. — main house addition/remodel</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon eng">🏗️</div><div><div class="doc-name">Lopez Smolens Structural Engineering — Main House</div><div class="doc-sub">Stamped structural permit set for remodel</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon plan">🏠</div><div><div class="doc-name">ADU Architectural Plans — Full Set</div><div class="doc-sub">Floor plans, elevations, cross sections, foundation/roof drawings</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon eng">🔧</div><div><div class="doc-name">ADU Structural Engineering (Oct & Dec 2022)</div><div class="doc-sub">Lopez Smolens stamped drawings, two revision sets</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon eng">⚡</div><div><div class="doc-name">HVAC Load Calculations — Main House + ADU</div><div class="doc-sub">Manual J load calculations with specified equipment — main house and ADU</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon eng">✅</div><div><div class="doc-name">IECC Energy Compliance Reports</div><div class="doc-sub">REScheck compliance certificates — main house and ADU</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon plan">🗺️</div><div><div class="doc-name">ADU Site Plan (May 2023)</div><div class="doc-sub">Updated site plan showing ADU placement and sewer routing</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">📋</div><div><div class="doc-name">ADU Permit Application (Jan 2023)</div><div class="doc-sub">Residential permit application filed with Town of Erie</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon survey">🔬</div><div><div class="doc-name">Soils Report — 275 Holbrook</div><div class="doc-sub">Subsurface investigation / drilldown report</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon survey">📏</div><div><div class="doc-name">Improvement Survey (July 2022)</div><div class="doc-sub">Full improvement location certificate</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">☣️</div><div><div class="doc-name">Asbestos Survey, Abatement & Air Clearance</div><div class="doc-sub">Pre-demo survey, signed abatement contract, air clearance, and NFACM waste manifest (2022)</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon legal">🧪</div><div><div class="doc-name">Lead Paint Report — 275 Holbrook</div><div class="doc-sub">Pre-demo lead-based paint inspection (June 2022)</div></div><span class="doc-tag available">Available</span></div>
+      <div class="doc-row"><div class="doc-icon plan">📐</div><div><div class="doc-name">TJOA Architectural Permit Set (Rev 1, March 2023)</div><div class="doc-sub">Full permit-set drawings by StudioTJOA Inc. — main house addition/remodel + ADU</div></div><a class="doc-tag download" href="/docs/275-TJOA-Arch-Permit-Set.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon eng">🏗️</div><div><div class="doc-name">Lopez Smolens Structural Engineering — Main House</div><div class="doc-sub">Stamped structural permit set for remodel</div></div><a class="doc-tag download" href="/docs/275-Lopez-Smolens-Structural.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon eng">🔧</div><div><div class="doc-name">ADU Structural Engineering (Oct 2022)</div><div class="doc-sub">Lopez Smolens stamped drawings for the ADU</div></div><a class="doc-tag download" href="/docs/275-ADU-Structural-Engineering.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon plan">🗺️</div><div><div class="doc-name">ADU Site Plan (May 2023)</div><div class="doc-sub">Updated site plan showing ADU placement and sewer routing</div></div><a class="doc-tag download" href="/docs/275-ADU-Site-Plan.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon eng">⚡</div><div><div class="doc-name">HVAC Manual J Load Calculations — ADU</div><div class="doc-sub">Manual J load calculations with specified equipment</div></div><a class="doc-tag download" href="/docs/275-HVAC-Manual-J-ADU.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon eng">✅</div><div><div class="doc-name">ADU 2015 IECC Energy Compliance Report</div><div class="doc-sub">Signed energy-code compliance report for the ADU</div></div><a class="doc-tag download" href="/docs/275-ADU-IECC-Compliance.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon survey">🔬</div><div><div class="doc-name">Soils Report — 275 Holbrook</div><div class="doc-sub">Subsurface investigation / drilldown report (2022)</div></div><a class="doc-tag download" href="/docs/275-Soils-Report.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon legal">☣️</div><div><div class="doc-name">Asbestos Survey — 275 Holbrook</div><div class="doc-sub">Pre-demo asbestos survey by certified inspector (June 2022)</div></div><a class="doc-tag download" href="/docs/275-Asbestos-Survey.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon legal">☣️</div><div><div class="doc-name">Asbestos Air Clearance Report — 275 Holbrook</div><div class="doc-sub">Air clearance test results on file (2022)</div></div><a class="doc-tag download" href="/docs/275-Asbestos-Air-Clearance.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon legal">☣️</div><div><div class="doc-name">NFACM Asbestos Waste Manifest</div><div class="doc-sub">Non-friable asbestos-containing material disposal record</div></div><a class="doc-tag download" href="/docs/275-Asbestos-Waste-Manifest.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon legal">🧪</div><div><div class="doc-name">Lead Paint Report — 275 Holbrook</div><div class="doc-sub">Pre-demo lead-based paint inspection (June 2022)</div></div><a class="doc-tag download" href="/docs/275-Lead-Paint-Report.pdf" target="_blank">↓ PDF</a></div>
       <div class="doc-row"><div class="doc-icon legal">🔨</div><div><div class="doc-name">Garage Demolition Permit Packet</div><div class="doc-sub">Accepted permit, application, narrative, and closed permit card</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon legal">🏛️</div><div><div class="doc-name">Grading Plan Permit Set</div><div class="doc-sub">Civil grading plans by CDS (March 2023)</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon eng">✅</div><div><div class="doc-name">ADU 2015 IECC Compliance Report</div><div class="doc-sub">Signed energy-code compliance report for the ADU</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">🧾</div><div><div class="doc-name">Tax Certificate — 275 Holbrook</div><div class="doc-sub">Current property tax certificate (Aug 2025)</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">📄</div><div><div class="doc-name">Title Commitment, Owner's Policy & Closing File</div><div class="doc-sub">ALTA owner's policy and full acquisition closing package</div></div><span class="doc-tag request">On request</span></div>
     </div>
   </div>
 
   <div style="margin-bottom: 2.5rem;">
     <div class="section-eyebrow" style="margin-bottom:1rem;">270 Holbrook + 410 & 420 Anderson — Subdivision Lots</div>
     <div class="docs-grid">
-      <div class="doc-row"><div class="doc-icon legal">📜</div><div><div class="doc-name">Recorded Replat — West Addition, Rockton Amendment</div><div class="doc-sub">Recorded August 2022. Three legally platted lots from original parcel.</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon eng">🚰</div><div><div class="doc-name">JVA Sanitary Sewer Extension — Stamped Engineering Plans</div><div class="doc-sub">192 LF 8" PVC SDR 35, 2 manholes. Approved by Town of Erie.</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon eng">💰</div><div><div class="doc-name">JVA Master Cost Estimate — Sewer Extension</div><div class="doc-sub">Engineer's opinion of probable cost: $135,100 (Oct 2021)</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon eng">🌊</div><div><div class="doc-name">Phase III Drainage Report</div><div class="doc-sub">Full drainage study for subdivision</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon survey">🔬</div><div><div class="doc-name">Soils Report — 270 Holbrook</div><div class="doc-sub">Subsurface investigation report (May 2021)</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon plan">📐</div><div><div class="doc-name">Building Envelopes, Setbacks & Footprints</div><div class="doc-sub">Per-lot drawings showing buildable area, setbacks, proposed footprints</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon plan">🏘️</div><div><div class="doc-name">Lot 1 (270 Holbrook) Purchased Plan Set</div><div class="doc-sub">Full house plans with copyright release</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">🤝</div><div><div class="doc-name">Town of Erie Sewer Short Form Agreement</div><div class="doc-sub">Signed agreement with Town for sewer extension (April 2021)</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon legal">📋</div><div><div class="doc-name">Land Use Application (Notarized) & Pre-App Meeting Details</div><div class="doc-sub">Full replat land-use package and Town pre-application meeting record (2021)</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">⚡</div><div><div class="doc-name">Xcel Demolition / Service Request</div><div class="doc-sub">Utility shut-off and demo coordination record (June 2021)</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon legal">🛠️</div><div><div class="doc-name">Town-Approved Temporary Use Permit (Construction Shed)</div><div class="doc-sub">Signed precedent allowing a construction shed on the lot during build-out</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">📄</div><div><div class="doc-name">Title Commitment, Title Policy & Settlement Statement</div><div class="doc-sub">Current title package for 270 Holbrook</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">☣️</div><div><div class="doc-name">Asbestos Survey, Abatement & Air Clearance — 270</div><div class="doc-sub">Pre-demo survey and clearance (2022)</div></div><span class="doc-tag available">Available</span></div>
+      <div class="doc-row"><div class="doc-icon legal">📜</div><div><div class="doc-name">Recorded Replat — West Addition, Rockton Amendment</div><div class="doc-sub">Recorded August 2022. Three legally platted lots from original parcel.</div></div><a class="doc-tag download" href="/docs/270-Recorded-Plat.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon eng">🚰</div><div><div class="doc-name">JVA Sanitary Sewer Extension — Stamped Engineering Plans</div><div class="doc-sub">192 LF 8" PVC SDR 35, 2 manholes. Approved by Town of Erie.</div></div><a class="doc-tag download" href="/docs/270-JVA-Sewer-Engineering-Stamped.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon eng">💰</div><div><div class="doc-name">JVA Master Cost Estimate — Sewer Extension</div><div class="doc-sub">Engineer's opinion of probable cost: $135,100 (Oct 2021)</div></div><a class="doc-tag download" href="/docs/270-JVA-Sewer-Cost-Estimate.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon eng">🌊</div><div><div class="doc-name">Phase III Drainage Report</div><div class="doc-sub">Full drainage study for the subdivision</div></div><a class="doc-tag download" href="/docs/270-Phase-III-Drainage-Report.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon survey">🔬</div><div><div class="doc-name">Soils Report — 270 Holbrook</div><div class="doc-sub">Subsurface investigation report (May 2021)</div></div><a class="doc-tag download" href="/docs/270-Soils-Report.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon plan">📐</div><div><div class="doc-name">Building Envelopes, Setbacks & Footprints</div><div class="doc-sub">Per-lot drawings showing buildable area, setbacks, and proposed footprints</div></div><a class="doc-tag download" href="/docs/270-Building-Envelopes-Setbacks.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon plan">🏘️</div><div><div class="doc-name">Lot 1 (270 Holbrook) Purchased Plan Set</div><div class="doc-sub">Full house plans with copyright release</div></div><span class="doc-tag available">Available</span></div>
+      <div class="doc-row"><div class="doc-icon legal">☣️</div><div><div class="doc-name">Asbestos Survey & Air Clearance Report — 270 Holbrook</div><div class="doc-sub">Pre-demo asbestos survey, abatement, and air clearance (2022)</div></div><a class="doc-tag download" href="/docs/270-Asbestos-Air-Clearance.pdf" target="_blank">↓ PDF</a></div>
       <div class="doc-row"><div class="doc-icon legal">🔨</div><div><div class="doc-name">Demolition Permit — 270 Holbrook</div><div class="doc-sub">Permit application and closed permit card</div></div><span class="doc-tag available">Available</span></div>
     </div>
   </div>
@@ -1072,12 +1110,9 @@ footer a { color: var(--accent-light); text-decoration: none; }
   <div>
     <div class="section-eyebrow" style="margin-bottom:1rem;">250 Holbrook — Vacant Lot</div>
     <div class="docs-grid">
-      <div class="doc-row"><div class="doc-icon survey">📏</div><div><div class="doc-name">Boundary Survey — 250 Holbrook</div><div class="doc-sub">Boundary survey on file (2022)</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon legal">📋</div><div><div class="doc-name">Title Commitment & Combined Title Commitments</div><div class="doc-sub">Current title commitments and policy distribution paperwork</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">📄</div><div><div class="doc-name">Closing Documents — 250 Holbrook</div><div class="doc-sub">Full acquisition closing package (Nov 2022)</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon legal">📝</div><div><div class="doc-name">Seller's Property Disclosure (2023)</div><div class="doc-sub">Previously prepared seller's disclosure — useful reference for the next buyer</div></div><span class="doc-tag request">On request</span></div>
-      <div class="doc-row"><div class="doc-icon eng">⚡</div><div><div class="doc-name">Xcel Energy Service Packet</div><div class="doc-sub">PSCO customer packet — gas/electric service documentation (2024)</div></div><span class="doc-tag available">Available</span></div>
-      <div class="doc-row"><div class="doc-icon eng">🔌</div><div><div class="doc-name">Xcel Overhead-to-Underground Coordination Letter</div><div class="doc-sub">Service relocation/release documentation on file</div></div><span class="doc-tag request">On request</span></div>
+      <div class="doc-row"><div class="doc-icon survey">📏</div><div><div class="doc-name">Boundary Survey — 250 Holbrook</div><div class="doc-sub">Boundary survey on file (2022)</div></div><a class="doc-tag download" href="/docs/250-Boundary-Survey.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon legal">📝</div><div><div class="doc-name">Seller's Property Disclosure (2023)</div><div class="doc-sub">Previously prepared seller's disclosure — useful reference for buyers</div></div><a class="doc-tag download" href="/docs/250-Sellers-Property-Disclosure.pdf" target="_blank">↓ PDF</a></div>
+      <div class="doc-row"><div class="doc-icon eng">⚡</div><div><div class="doc-name">Xcel Energy / PSCO Service Packet</div><div class="doc-sub">Gas and electric service documentation for the lot</div></div><a class="doc-tag download" href="/docs/250-Xcel-PSCO-Service-Packet.pdf" target="_blank">↓ PDF</a></div>
     </div>
   </div>
 
@@ -1110,7 +1145,7 @@ footer a { color: var(--accent-light); text-decoration: none; }
       <div class="util-row"><span class="util-key">Water</span><span class="util-val status-yes">✓ Paid tap — ready to connect</span></div>
       <div class="util-row"><span class="util-key">Sewer</span><span class="util-val status-yes">✓ Paid tap — ready to connect</span></div>
       <div class="util-row"><span class="util-key">Gas</span><span class="util-val status-yes">✓ Paid tap — ready to connect</span></div>
-      <div class="util-row"><span class="util-key">Electric</span><span class="util-val status-yes">✓ Available at street (Xcel)</span></div>
+      <div class="util-row"><span class="util-key">Electric</span><span class="util-val status-yes">✓ Pedestal installed — ready to connect</span></div>
       <div class="util-row"><span class="util-key">Zoning</span><span class="util-val">OTR</span></div>
       <div class="util-row"><span class="util-key">Frontage</span><span class="util-val">Holbrook Street</span></div>
       <div class="util-row"><span class="util-key">HOA</span><span class="util-val status-yes">✓ None</span></div>
@@ -1120,7 +1155,7 @@ footer a { color: var(--accent-light); text-decoration: none; }
       <div class="util-row"><span class="util-key">Water</span><span class="util-val status-yes">✓ Available at street</span></div>
       <div class="util-row"><span class="util-key">Sewer</span><span class="util-val status-req">Engineering approved — needs install</span></div>
       <div class="util-row"><span class="util-key">Gas</span><span class="util-val status-yes">✓ Available at street (Xcel)</span></div>
-      <div class="util-row"><span class="util-key">Electric</span><span class="util-val status-yes">✓ Available at street (Xcel)</span></div>
+      <div class="util-row"><span class="util-key">Electric</span><span class="util-val status-yes">✓ Pedestal installed — ready to connect</span></div>
       <div class="util-row"><span class="util-key">Sewer plan</span><span class="util-val">JVA stamped, Town-approved</span></div>
       <div class="util-row"><span class="util-key">Zoning</span><span class="util-val">OTR</span></div>
       <div class="util-row"><span class="util-key">HOA</span><span class="util-val status-yes">✓ None</span></div>
@@ -1130,7 +1165,7 @@ footer a { color: var(--accent-light); text-decoration: none; }
       <div class="util-row"><span class="util-key">Water</span><span class="util-val status-yes">✓ Available at street</span></div>
       <div class="util-row"><span class="util-key">Sewer</span><span class="util-val status-req">Same extension as 410 — shared plan</span></div>
       <div class="util-row"><span class="util-key">Gas</span><span class="util-val status-yes">✓ Available at street (Xcel)</span></div>
-      <div class="util-row"><span class="util-key">Electric</span><span class="util-val status-yes">✓ Available at street (Xcel)</span></div>
+      <div class="util-row"><span class="util-key">Electric</span><span class="util-val status-yes">✓ Pedestal installed — ready to connect</span></div>
       <div class="util-row"><span class="util-key">Sewer plan</span><span class="util-val">Shared with 410 — same JVA plans</span></div>
       <div class="util-row"><span class="util-key">Zoning</span><span class="util-val">OTR</span></div>
       <div class="util-row"><span class="util-key">HOA</span><span class="util-val status-yes">✓ None</span></div>
@@ -1140,7 +1175,7 @@ footer a { color: var(--accent-light); text-decoration: none; }
       <div class="util-row"><span class="util-key">Water</span><span class="util-val status-req">Available at Holbrook St — tap needed</span></div>
       <div class="util-row"><span class="util-key">Sewer</span><span class="util-val status-req">Available at Holbrook St — tap needed</span></div>
       <div class="util-row"><span class="util-key">Gas</span><span class="util-val status-req">Available at Holbrook St — tap needed</span></div>
-      <div class="util-row"><span class="util-key">Electric</span><span class="util-val status-yes">✓ Available at street (Xcel)</span></div>
+      <div class="util-row"><span class="util-key">Electric</span><span class="util-val status-yes">✓ Pedestal installed — ready to connect</span></div>
       <div class="util-row"><span class="util-key">Water provider</span><span class="util-val">Town of Erie — 303-926-2870</span></div>
       <div class="util-row"><span class="util-key">Zoning</span><span class="util-val">OTR</span></div>
       <div class="util-row"><span class="util-key">HOA</span><span class="util-val status-yes">✓ None</span></div>
@@ -1274,7 +1309,7 @@ const props = [
     type: 'rehab',
     featured: true,
     tagline: 'Standing structure, gutted to the studs — bring your vision.',
-    desc: 'This is the rare Old Town Erie opportunity that takes less imagination than most: the structure is standing, the hard demo work is complete, and every professional needed to take it to permit is already in your files. The original house at 275 Holbrook has been gutted to the studs. The garage has been demolished under a closed Town permit. Asbestos has been surveyed, abated, and air-cleared; a pre-demo lead-paint report is also on file. What remains is a solid shell with legal water, sewer, and gas taps already in place — on a street where recent finished homes have sold in the $475,000–$538,000 range.\n\nStudioTJOA designed a full architectural permit set for a 3-bedroom, 3-bath addition/remodel — 1,525 sq ft above grade (1,255 sq ft existing retained plus 270 sq ft of new addition, with 250 sq ft of existing footprint demolished) plus a 476 sq ft basement, totaling roughly 2,000 sq ft of conditioned space in the main house. Lopez Smolens completed the structural engineering. A full HVAC Manual J load calculation with specified equipment is on file. A CDS civil grading plan and an IECC RESCheck energy-compliance report round out the permit package. All of these transfer with the property.\n\nThe ADU opportunity is equally compelling. A separate ADU structure (879 sq ft conditioned) has been fully designed, structurally engineered, and submitted for permit with its own signed 2015-IECC compliance report. The property has dual sewer routing — front connection to Holbrook Street for the main house, rear connection for the ADU. The ADU design was adapted from a previously permitted project, which accelerates Town review.',
+    desc: 'This is the rare Old Town Erie opportunity that takes less imagination than most: the structure is standing, the hard demo work is complete, and every professional needed to take it to permit is already in your files. The original house at 275 Holbrook has been gutted to the studs. The garage has been demolished under a closed Town permit. An asbestos survey was completed and an air clearance report is on file; a pre-demo lead-paint report is also on file. What remains is a solid shell with legal water, sewer, and gas taps already in place — on a street where recent finished homes have sold in the $475,000–$538,000 range.\n\nStudioTJOA designed a full architectural permit set for a 3-bedroom, 3-bath addition/remodel — 1,525 sq ft above grade (1,255 sq ft existing retained plus 270 sq ft of new addition, with 250 sq ft of existing footprint demolished) plus a 476 sq ft basement, totaling roughly 2,000 sq ft of conditioned space in the main house. Lopez Smolens completed the structural engineering. A full HVAC Manual J load calculation with specified equipment is on file. A CDS civil grading plan and an IECC RESCheck energy-compliance report round out the permit package. All of these transfer with the property.\n\nThe ADU opportunity is equally compelling. A separate ADU structure (879 sq ft conditioned) has been fully designed, structurally engineered, and submitted for permit with its own signed 2015-IECC compliance report. The property has dual sewer routing — front connection to Holbrook Street for the main house, rear connection for the ADU. The ADU design was adapted from a previously permitted project, which accelerates Town review.',
     facts: [
       { label: 'Legal description', val: 'ERI 24565-B L23-24 BLK19' },
       { label: 'Owner', val: 'Rockton 275 Holbrook LLC' },
@@ -1288,12 +1323,12 @@ const props = [
       { label: 'Architect', val: 'StudioTJOA Inc.' },
       { label: 'Structural eng.', val: 'Lopez Smolens' },
       { label: 'Civil / grading', val: 'CDS (March 2023)' },
-      { label: 'Asbestos', val: 'Surveyed, abated & cleared' },
+      { label: 'Asbestos', val: 'Surveyed; air clearance on file' },
       { label: 'Lead paint', val: 'Pre-demo report on file' },
       { label: 'Garage', val: 'Demolished under permit' },
     ],
     docs: ['TJOA arch permit set (Rev 1)', 'Lopez Smolens structural plans', 'ADU full plan set', 'ADU structural engineering', 'HVAC Manual J load calculations', 'IECC / RESCheck energy compliance', 'ADU site plan', 'Soils report', 'Improvement survey', 'Asbestos survey, abatement & clearance', 'Lead paint report', 'Garage demolition permit packet', 'Grading plan (CDS)', 'Tax certificate', 'Title policy & closing file'],
-    chips: ['Legal taps in place', 'TJOA permit plans', 'ADU designed', 'Asbestos & lead cleared'],
+    chips: ['Legal taps in place', 'TJOA permit plans', 'ADU designed', 'Asbestos survey & air clearance'],
     headerClass: 'rehab-style',
     badgeClass: 'badge-rehab',
     badgeLabel: 'Rehab Opportunity',
@@ -1309,7 +1344,7 @@ const props = [
     type: 'lot',
     featured: false,
     tagline: 'Holbrook frontage, paid taps, plans available — most shovel-ready of the three subdivision lots.',
-    desc: 'The front lot of the West Addition Rockton Amendment subdivision, facing Holbrook Street. This is the most immediately buildable of the three subdivision lots — water, sewer, and gas taps have been paid and are ready to connect at the lot line. You don\'t need to extend anything; you just need to build.\n\nThe lot is approximately 6,000+ sq ft, created through a Town-approved replat recorded in August 2022. The replat reconfigured the original 200\' x 100\' parcel into three lots of roughly 63\' x 100\' each. A purchased plan set (.dwg files with copyright release) is on file for Lot 1 specifically. Building envelope and setback drawings show the full buildable area. A soils report has been completed.\n\nPer the replat narrative, the vision for this lot is a 1,500–1,800 sq ft primary home (3BR/2BA) with an ADU, facing Holbrook Street. The OTR zone allows this configuration. The home is designed to blend into the character of Old Town while maximizing the lot.',
+    desc: 'The front lot of the West Addition Rockton Amendment subdivision, facing Holbrook Street. This is the most immediately buildable of the three subdivision lots — water, sewer, and gas taps have been paid and are ready to connect at the lot line. An electric pedestal has also been installed on-site. You don\'t need to extend anything; you just need to build.\n\nThe lot is approximately 6,000+ sq ft, created through a Town-approved replat recorded in August 2022. The replat reconfigured the original 200\' x 100\' parcel into three lots of roughly 63\' x 100\' each. A purchased plan set (.dwg files with copyright release) is on file for Lot 1 specifically. Building envelope and setback drawings show the full buildable area. A soils report has been completed.\n\nPer the replat narrative, the vision for this lot is a 1,500–1,800 sq ft primary home (3BR/2BA) with an ADU, facing Holbrook Street. The OTR zone allows this configuration. The home is designed to blend into the character of Old Town while maximizing the lot.',
     facts: [
       { label: 'Legal lot', val: 'Lot 1 of West Addition, Rockton Amendment' },
       { label: 'Owner', val: 'Rockton 270 Holbrook LLC' },
@@ -1318,12 +1353,13 @@ const props = [
       { label: 'Water tap', val: '✓ Paid — ready to connect' },
       { label: 'Sewer tap', val: '✓ Paid — ready to connect' },
       { label: 'Gas tap', val: '✓ Paid — ready to connect' },
+      { label: 'Electric', val: 'Pedestal installed — ready to connect' },
       { label: 'Frontage', val: 'Holbrook Street' },
       { label: 'ADU allowed', val: 'Yes' },
       { label: 'Replat recorded', val: 'August 2022' },
     ],
-    docs: ['Recorded replat — West Addition', 'Building envelope & setback drawings', 'Lot 1 purchased plan set (.dwg)', 'Soils report', 'Phase III drainage report', 'Notarized Land Use Application & pre-app meeting', 'Xcel demo / service request', 'Temporary Use Permit (construction shed)', 'Title commitment, policy & settlement', 'Asbestos clearance & demolition permit'],
-    chips: ['Paid taps', 'Holbrook frontage', 'Plans on file', 'ADU-ready'],
+    docs: ['Recorded replat — West Addition', 'Building envelope & setback drawings', 'Lot 1 purchased plan set (.dwg)', 'Soils report', 'Phase III drainage report'],
+    chips: ['Paid taps', 'Electric pedestal installed', 'Holbrook frontage', 'ADU-ready'],
     headerClass: 'lot-style',
     badgeClass: 'badge-lot',
     badgeLabel: 'Vacant Lot',
@@ -1348,12 +1384,13 @@ const props = [
       { label: 'Water', val: 'Available at Anderson St' },
       { label: 'Sewer', val: 'Extension required — plans done' },
       { label: 'Gas', val: 'Available at Anderson St (Xcel)' },
+      { label: 'Electric', val: 'Pedestal installed — ready to connect' },
       { label: 'Frontage', val: 'Anderson Street' },
       { label: 'ADU allowed', val: 'Yes' },
       { label: 'Sewer engineer', val: 'JVA Inc., Boulder CO' },
     ],
-    docs: ['JVA stamped sewer plans', 'JVA cost estimate ($135,100, Oct 2021)', 'Kneebone contractor bid (~$130,000, June 2021)', 'Town-signed Sewer Short Form Agreement', 'Recorded replat', 'Building envelopes & setbacks', 'Soils report', 'Phase III drainage report'],
-    chips: ['Sewer engineering done', 'ADU-ready', 'Soils report', 'Drainage report'],
+    docs: ['JVA stamped sewer plans', 'JVA cost estimate ($135,100, Oct 2021)', 'Recorded replat', 'Building envelopes & setbacks', 'Soils report', 'Phase III drainage report'],
+    chips: ['Sewer engineering done', 'Electric pedestal installed', 'ADU-ready', 'Soils report'],
     headerClass: 'lot-style',
     badgeClass: 'badge-lot',
     badgeLabel: 'Vacant Lot',
@@ -1378,12 +1415,13 @@ const props = [
       { label: 'Water', val: 'Available at Anderson St' },
       { label: 'Sewer', val: 'Extension required — plans done' },
       { label: 'Gas', val: 'Available at Anderson St (Xcel)' },
+      { label: 'Electric', val: 'Pedestal installed — ready to connect' },
       { label: 'Frontage', val: 'Anderson Street' },
       { label: 'ADU allowed', val: 'Yes' },
       { label: 'Sewer engineer', val: 'JVA Inc., Boulder CO' },
     ],
-    docs: ['JVA stamped sewer plans', 'JVA cost estimate ($135,100, Oct 2021)', 'Kneebone contractor bid (~$130,000, June 2021)', 'Town-signed Sewer Short Form Agreement', 'Recorded replat', 'Building envelopes & setbacks', 'Soils report', 'Phase III drainage report'],
-    chips: ['Sewer engineering done', 'ADU-ready', 'End lot', 'Soils report'],
+    docs: ['JVA stamped sewer plans', 'JVA cost estimate ($135,100, Oct 2021)', 'Recorded replat', 'Building envelopes & setbacks', 'Soils report', 'Phase III drainage report'],
+    chips: ['Sewer engineering done', 'Electric pedestal installed', 'ADU-ready', 'End lot'],
     headerClass: 'lot-style',
     badgeClass: 'badge-lot',
     badgeLabel: 'Vacant Lot',
@@ -1399,7 +1437,7 @@ const props = [
     type: 'lot',
     featured: false,
     tagline: 'A clean, buildable Old Town lot directly across from the 270/410/420 Anderson block.',
-    desc: 'This is the most straightforward property in the portfolio — a clean Old Town lot on Holbrook Street, zoned OTR, with no encumbrances and no half-finished projects to untangle. No architectural plans have been drawn, which means a buyer starts with a truly blank canvas in one of Erie\'s most walkable, established neighborhoods.\n\nUtilities are not yet tapped but are all available in Holbrook Street. Water and sewer are Town of Erie services (645 Holbrook St, 303-926-2870); a buyer acquires tap rights at permit time. Gas and electric are Xcel Energy, with service available at the street. A 2022 boundary survey, acquisition closing file, title commitments, Xcel service packet, and a previously prepared seller\'s property disclosure are all on file.\n\nOTR zoning permits a single-family home with an ADU — exactly the configuration driving demand in Old Town Erie. The lot sits directly across Holbrook Street from 270 Holbrook (the Holbrook-facing parcel of the Anderson subdivision). For a buyer assembling multiple properties on this block, combining 250 and 270 produces Holbrook frontage on both sides of the street — an unusual opportunity in a neighborhood where land this close to Briggs Street is rarely offered together.',
+    desc: 'This is the most straightforward property in the portfolio — a clean Old Town lot on Holbrook Street, zoned OTR, with no encumbrances and no half-finished projects to untangle. No architectural plans have been drawn, which means a buyer starts with a truly blank canvas in one of Erie\'s most walkable, established neighborhoods.\n\nUtilities are not yet tapped but are all available in Holbrook Street. Water and sewer are Town of Erie services (645 Holbrook St, 303-926-2870); a buyer acquires tap rights at permit time. Gas is Xcel Energy, available at the street. An electric pedestal has been installed on the lot — no additional infrastructure required for electrical service. A 2022 boundary survey, Xcel service packet, and a previously prepared seller\'s property disclosure are all on file.\n\nOTR zoning permits a single-family home with an ADU — exactly the configuration driving demand in Old Town Erie. The lot sits directly across Holbrook Street from 270 Holbrook (the Holbrook-facing parcel of the Anderson subdivision). For a buyer assembling multiple properties on this block, combining 250 and 270 produces Holbrook frontage on both sides of the street — an unusual opportunity in a neighborhood where land this close to Briggs Street is rarely offered together.',
     facts: [
       { label: 'Legal description', val: 'ERI 24595 L11-12 BLK35 WEST ADD' },
       { label: 'Owner', val: 'Mark Rockwell' },
@@ -1408,13 +1446,13 @@ const props = [
       { label: 'Sewer', val: 'Available at Holbrook St — tap needed' },
       { label: 'Gas', val: 'Available at Holbrook St — tap needed' },
       { label: 'Water provider', val: 'Town of Erie — 303-926-2870' },
-      { label: 'Electric', val: 'Xcel Energy — available at street' },
+      { label: 'Electric', val: 'Pedestal installed — ready to connect' },
       { label: 'Survey', val: 'On file' },
       { label: 'ADU allowed', val: 'Yes' },
       { label: 'Plans on file', val: 'None — blank canvas' },
     ],
-    docs: ['Boundary survey (2022)', 'Title commitments & policy distribution', 'Acquisition closing file', 'Prior Seller\'s Property Disclosure (2023)', 'Xcel Energy / PSCO service packet', 'Xcel overhead-to-underground coordination letter'],
-    chips: ['Blank canvas', 'Survey on file', 'ADU-ready', 'No HOA'],
+    docs: ['Boundary survey (2022)', 'Seller\'s Property Disclosure (2023)', 'Xcel Energy / PSCO service packet'],
+    chips: ['Blank canvas', 'Electric pedestal installed', 'Survey on file', 'ADU-ready'],
     headerClass: 'lot-style',
     badgeClass: 'badge-lot',
     badgeLabel: 'Vacant Lot',
@@ -1440,8 +1478,8 @@ const faqs = [
   { cat: 'Buying & offers', q: 'Can I buy all five properties?', a: 'Yes — the full portfolio package is $1,195,000 for all five properties across three LLCs plus the personally held 250 Holbrook lot. This requires separate closings for each LLC-owned property (Rockton 275 Holbrook LLC, Rockton 270 Holbrook LLC) plus the personal lot. All plans, engineering documents, and records transfer with their respective properties.' },
   { cat: 'Buying & offers', q: 'Do you pay buyer\'s agent commissions?', a: 'Agents who work for you deserve to be paid for the work they do on your behalf — that\'s completely reasonable. Because this is a For Sale By Owner listing, there\'s no listing agent and no commission built into the seller\'s side. If you\'d like your agent to be compensated (and they should be, if they\'ve been helping you), simply include their commission in the offer price you submit, so they\'re taken care of from your side of the transaction.' },
   { cat: 'Buying & offers', q: 'I\'m working with a buyer\'s agent. How does that work?', a: 'Buyer\'s agents are absolutely welcome here. Since there\'s no listing agent, there\'s no seller-side commission — so if your agent has been doing the legwork for you, please include their compensation in your offer price. For example, if you\'re offering $200,000 and your agent earns 3%, submit your offer at $206,000 so the full amount is reflected. Your agent will walk you through the mechanics — just make sure the number you bring covers everyone on your team.' },
-  { cat: 'Buying & offers', q: 'What does "as-is" mean for 275 Holbrook?', a: 'The property is sold in its current condition — gutted to the studs, garage demolished under permit, asbestos surveyed/abated/air-cleared, and lead-based paint surveyed pre-demo. The seller will not make repairs or improvements. The value in 275 Holbrook is the paid taps, the completed demolition and environmental work, and the plans and engineering that transfer with it — not the physical structure. A buyer should inspect and price accordingly.' },
-  { cat: 'Buying & offers', q: 'What about the lead-paint and asbestos history at 275 Holbrook?', a: 'Both were addressed before the structure was opened up. The asbestos was surveyed by a certified inspector, abated by a licensed contractor, an air-clearance test was performed and passed, and the NFACM (non-friable asbestos-containing material) waste manifest is on file. A pre-demo lead-based paint inspection was also completed. All of this documentation transfers with the property — it is rare and valuable to have a clean environmental file already in hand on a structure of this age.' },
+  { cat: 'Buying & offers', q: 'What does "as-is" mean for 275 Holbrook?', a: 'The property is sold in its current condition — gutted to the studs, garage demolished under permit, asbestos surveyed with air clearance on file, and lead-based paint surveyed pre-demo. The seller will not make repairs or improvements. The value in 275 Holbrook is the paid taps, the completed demolition and environmental work, and the plans and engineering that transfer with it — not the physical structure. A buyer should inspect and price accordingly.' },
+  { cat: 'Buying & offers', q: 'What about the lead-paint and asbestos history at 275 Holbrook?', a: 'Both were documented before the structure was opened up. An asbestos survey was completed by a certified inspector and an air clearance report is on file, along with the NFACM (non-friable asbestos-containing material) waste manifest. A pre-demo lead-based paint inspection was also completed. All of this documentation transfers with the property — having a clean environmental file already in hand on a structure of this age is genuinely valuable and saves a buyer time and money.' },
   { cat: 'Buying & offers', q: 'How does the offer process work?', a: 'Use the contact form to send your offer terms (price, financing, contingencies, target close date) or attach a signed Colorado Contract to Buy and Sell. I read every inquiry myself and respond within 24 hours. There is no listing agent, no offer-deadline games, and no "highest and best" round — terms are negotiated directly. Closings run through a title company of mutual choosing; LLC-held parcels (270, 275, and the Anderson lots) close as entity sales, and 250 closes as a personal sale.' },
   { cat: 'Buying & offers', q: 'Can I walk the properties before making an offer?', a: 'Yes. Use the contact form to schedule a site visit. The lots are open and easy to walk. 275 Holbrook (the gutted house) is locked and requires the owner present — well worth the visit, since seeing the structural condition first-hand is much more useful than photos.' },
   { cat: 'Buying & offers', q: 'What are property taxes on these lots?', a: 'Vacant lots in Colorado are assessed at land value only, which typically means low annual taxes compared to improved properties. Exact current tax amounts are available through the Boulder County and Weld County assessors\' offices (275 Holbrook is in Weld County; 250 and 270/410/420 are in Boulder County/Town of Erie jurisdiction). Tax amounts will reassess based on the sale price at time of purchase.' },

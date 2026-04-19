@@ -712,6 +712,47 @@ main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 5rem; }
 .map-embed { border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
 .map-embed iframe { display: block; width: 100%; height: 380px; border: 0; }
 
+/* ── OPEN HOUSE BANNER ── */
+.open-house-banner {
+  background: linear-gradient(135deg, #1A3A5C 0%, #2A5A8C 100%);
+  color: white;
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.oh-badge {
+  background: #C49A2A;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.oh-main { flex: 1; min-width: 200px; }
+.oh-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.25rem; }
+.oh-details { font-size: 13px; opacity: 0.85; line-height: 1.6; }
+.oh-cta {
+  background: #C49A2A;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+.oh-cta:hover { background: #8B6914; }
+
 /* ── UTILITIES TABLE ── */
 .util-grid {
   display: grid;
@@ -958,6 +999,19 @@ footer a { color: var(--accent-light); text-decoration: none; }
     <div class="section-eyebrow">Available properties</div>
     <h2>Five properties, one neighborhood</h2>
     <p>Click any property for full details — lot dimensions, utility status, plans on file, and everything you'd need to evaluate it.</p>
+  </div>
+
+  <!-- Open house banner — auto-hides at 2pm MDT (20:00 UTC) May 2, 2026 -->
+  <div id="open-house-banner" class="open-house-banner">
+    <span class="oh-badge">Open House</span>
+    <div class="oh-main">
+      <div class="oh-title">275 Holbrook Street — Come See It In Person</div>
+      <div class="oh-details">
+        <strong>Saturday, May 2, 2026 · 1:00–2:00 PM</strong> · 275 Holbrook St, Erie CO 80516<br>
+        The gutted house and lot are open for a walk-through. No appointment needed — just show up. Bring your builder, your architect, or your curiosity.
+      </div>
+    </div>
+    <button class="oh-cta" onclick="showPage('contact', document.querySelector('nav a:nth-child(5)'))">Questions? Contact us →</button>
   </div>
 
   <div class="prop-grid" id="prop-grid"></div>
@@ -1603,6 +1657,17 @@ function submitForm() {
 
 renderProps();
 renderFAQ();
+
+// ── OPEN HOUSE AUTO-HIDE ──
+// Hides banner at 2:00pm MDT on May 2, 2026 (= 20:00:00 UTC)
+(function() {
+  var EXPIRES = new Date('2026-05-02T20:00:00Z');
+  var banner = document.getElementById('open-house-banner');
+  if (!banner) return;
+  if (new Date() >= EXPIRES) {
+    banner.style.display = 'none';
+  }
+})();
 </script>
 </body>
 </html>

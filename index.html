@@ -1552,6 +1552,7 @@ function showPage(name, el) {
   document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
   if (el) el.classList.add('active');
+  document.getElementById('page-' + name).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ── FORM ──
